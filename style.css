@@ -114,11 +114,11 @@ body{
 
 .hero-art{ text-align:center; }
 .cat-wrap{
-  background:rgba(255,255,255,.35);
-  border:1px solid rgba(0,0,0,.08);
-  border-radius:24px;
-  padding:18px;
-  box-shadow: var(--shadow);
+  background: rgba(255,255,255,0.25);
+  border: none;
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.12);
 }
 .cat-wrap img{
   width:115%;
@@ -340,4 +340,5 @@ details p{
   .hero{ padding:46px 16px 34px; }
   .main{ padding:28px 16px 60px; }
 }
+
 
