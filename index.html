@@ -3,237 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RICH ME<N>OW</title>
+  <title>Rich Meow – An Antisocial Catperiment</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <header class="topbar">
+
+<header class="topbar">
+  <div class="topbar-inner">
     <div class="brand">
-      <div class="logo">RICH ME<span class="strike">N</span>OW</div>
-      <div class="tagline">An Antisocial Catperiment</div>
+      <strong>RICH ME∿OW</strong>
+      <span>An Antisocial Catperiment</span>
     </div>
-
-    <nav class="nav">
-      <a href="#levels">Wealth Levels</a>
-      <a href="#donate">Donate</a>
-      <a href="#faq">FAQ</a>
+    <nav>
+      <a href="#">Wealth Levels</a>
+      <a href="#">Donate</a>
+      <a href="#">FAQ</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <!-- HERO (yellow) -->
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-copy">
-        <h1>Help Meow become<br/>the world’s richest cat.</h1>
+<main class="hero">
+  <div class="hero-inner">
 
-        <p class="lead">
-          I don’t catch mice. I catch <strong>money</strong>.<br/>
-          <span class="muted">Or are you secretly just a poor dog?</span>
-        </p>
+    <div class="hero-copy">
+      <h1>
+        Help Meow become<br>
+        the world’s richest cat.
+      </h1>
 
-        <div class="cta-row">
-          <button class="cta" disabled aria-disabled="true">Feed Meow with Money</button>
-          <div class="cta-note">Donations are closed. Reveal in <strong>1 year</strong>.</div>
-        </div>
-
-        <div class="micro">
-          This is an internet experiment: you won’t see totals until the reveal.
-        </div>
-
-        <div class="chips">
-          <span class="chip">No account</span>
-          <span class="chip">No login</span>
-          <span class="chip">No reason</span>
-        </div>
-      </div>
-
-      <div class="hero-art">
-        <div class="cat-wrap">
-          <img src="cat.png" alt="Rich Meow (Maine Coon)" />
-        </div>
-        <div class="cat-caption">Rich Meow • Maine Coon • unapologetically ambitious</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- MAIN (white) -->
-  <main class="main">
-    <section class="grid">
-      <!-- Countries teaser -->
-      <article class="card">
-        <div class="card-head">
-          <h2>Top Donating Countries</h2>
-          <span class="pill">teaser</span>
-        </div>
-
-        <p class="small">
-          Rankings rotate. Totals stay hidden until the reveal.
-        </p>
-
-        <ul class="ranking" id="rankingList">
-          <!-- Filled by JS -->
-        </ul>
-
-        <a class="link" href="#faq">How does this work?</a>
-      </article>
-
-      <!-- The 1-year twist -->
-      <article class="card">
-        <div class="card-head">
-          <h2>The Twist</h2>
-          <span class="pill">1-year reveal</span>
-        </div>
-
-        <p>
-          The world won’t see how much was given. Not now.
-          <strong>One year later</strong>, Rich Meow shows the number.
-        </p>
-
-        <p class="small">
-          Until then: pure faith, pure chaos, pure curiosity.
-        </p>
-
-        <div class="quote">
-          “If you need the total upfront… you might be a poor dog.”
-        </div>
-      </article>
-    </section>
-
-    <!-- Levels -->
-    <section class="section" id="levels">
-      <div class="section-head">
-        <h2>Wealth Levels</h2>
-        <p class="small">When the experiment is live, Meow evolves. Not yet.</p>
-      </div>
-
-      <div class="levels">
-        <div class="level">
-          <div class="level-title">Level 1</div>
-          <div class="level-name">Cardboard Era</div>
-        </div>
-        <div class="level">
-          <div class="level-title">Level 2</div>
-          <div class="level-name">Cushion Money</div>
-        </div>
-        <div class="level">
-          <div class="level-title">Level 3</div>
-          <div class="level-name">Gold Collar</div>
-        </div>
-        <div class="level">
-          <div class="level-title">Level 4</div>
-          <div class="level-name">Luxury Tree</div>
-        </div>
-        <div class="level">
-          <div class="level-title">Level 5</div>
-          <div class="level-name">Jet Meow</div>
-        </div>
-        <div class="level">
-          <div class="level-title">Level 6</div>
-          <div class="level-name">World Domination</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Donate (disabled) -->
-    <section class="section" id="donate">
-      <div class="section-head">
-        <h2>Donate</h2>
-        <p class="small">Not active yet. The button stays locked on purpose.</p>
-      </div>
-
-      <div class="donate-row">
-        <button class="ghost" disabled aria-disabled="true">$5 Sardine Snack</button>
-        <button class="ghost" disabled aria-disabled="true">$25 Fancy Feast</button>
-        <button class="ghost" disabled aria-disabled="true">$50 Golden Fish</button>
-        <button class="ghost" disabled aria-disabled="true">Custom</button>
-      </div>
-
-      <p class="small dim">
-        When activated later, payments will be handled by a trusted provider. No totals shown until the reveal.
+      <p class="lead">
+        I don’t catch mice. I catch <strong>wealth</strong>.<br>
+        Or are you secretly just a poor dog?
       </p>
-    </section>
 
-    <!-- FAQ -->
-    <section class="section" id="faq">
-      <div class="section-head">
-        <h2>FAQ</h2>
-        <p class="small">Minimal answers. Maximum ego.</p>
+      <div class="cta-row">
+        <button class="cta disabled">Feed Meow with Money</button>
+        <span class="note">Donations are closed. Reveal in <strong>1 year</strong>.</span>
       </div>
 
-      <div class="faq">
-        <details>
-          <summary>Is this real?</summary>
-          <p>Yes. It’s an experiment about generosity and impulse. No charity framing. Just Meow.</p>
-        </details>
+      <p class="fineprint">
+        This is an internet experiment. You won’t see totals until the reveal.
+      </p>
 
-        <details>
-          <summary>Why can’t I see the total?</summary>
-          <p>Because the total changes behaviour. The reveal is the point.</p>
-        </details>
-
-        <details>
-          <summary>Where does the money go?</summary>
-          <p>Not active yet. When it’s live, you’ll see a simple statement about it on this page.</p>
-        </details>
-
-        <details>
-          <summary>Is this a donation in the “charity” sense?</summary>
-          <p>No. It’s a voluntary gift. No receipts. No promises.</p>
-        </details>
+      <div class="tags">
+        <span>No account</span>
+        <span>No login</span>
+        <span>No reason</span>
       </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div>© Rich Meow Project • Internet experiment</div>
-    <div class="footer-links">
-      <a href="#" aria-disabled="true">Imprint</a>
-      <a href="#" aria-disabled="true">Privacy</a>
     </div>
-  </footer>
 
-  <script>
-    // Rotating "Top Donating Countries" teaser (NO totals, no real data)
-    const rotations = [
-      [
-        { flag: "🇺🇸", name: "United States" },
-        { flag: "🇦🇪", name: "United Arab Emirates" },
-        { flag: "🇸🇬", name: "Singapore" }
-      ],
-      [
-        { flag: "🇦🇪", name: "United Arab Emirates" },
-        { flag: "🇺🇸", name: "United States" },
-        { flag: "🇨🇭", name: "Switzerland" }
-      ],
-      [
-        { flag: "🇺🇸", name: "United States" },
-        { flag: "🇨🇭", name: "Switzerland" },
-        { flag: "🇦🇪", name: "United Arab Emirates" }
-      ]
-    ];
+    <div class="hero-art">
+      <img src="cat.png" alt="Rich Meow" />
+    </div>
 
-    const list = document.getElementById("rankingList");
-    let i = 0;
+  </div>
+</main>
 
-    function render() {
-      const items = rotations[i % rotations.length];
-      list.innerHTML = items.map((x, idx) => `
-        <li class="rank-item">
-          <span class="rank-left">
-            <span class="rank-num">${idx + 1}</span>
-            <span class="flag">${x.flag}</span>
-            <span class="country">${x.name}</span>
-          </span>
-          <span class="rank-right">hidden</span>
-        </li>
-      `).join("");
-      i++;
-    }
-
-    render();
-    setInterval(render, 3500);
-  </script>
 </body>
 </html>
-
