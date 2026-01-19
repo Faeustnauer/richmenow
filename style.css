@@ -13,7 +13,7 @@
 body{
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
                Roboto, Helvetica, Arial, sans-serif;
-  background: hotpink !important;
+  background:var(--yellow);
   color:var(--black);
 }
 
@@ -137,4 +137,5 @@ nav a{
   height:auto;
   margin-top:12px;
 }
+
 
