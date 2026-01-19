@@ -129,6 +129,7 @@ body{
   display:block;
   max-height:520px;
   object-fit:contain;
+  transform: translateX(-5%);
 }
 .cat-caption{
   margin-top:10px;
@@ -343,6 +344,7 @@ details p{
   .hero{ padding:46px 16px 34px; }
   .main{ padding:28px 16px 60px; }
 }
+
 
 
 
