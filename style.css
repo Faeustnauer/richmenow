@@ -121,10 +121,10 @@ body{
   box-shadow: var(--shadow);
 }
 .cat-wrap img{
-  width:100%;
+  width:115%;
   height:auto;
   display:block;
-  max-height:420px;
+  max-height:520px;
   object-fit:contain;
 }
 .cat-caption{
@@ -340,3 +340,4 @@ details p{
   .hero{ padding:46px 16px 34px; }
   .main{ padding:28px 16px 60px; }
 }
+
