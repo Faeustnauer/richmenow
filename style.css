@@ -117,11 +117,17 @@ body{
   top: 12px;
 }
 .cat-wrap{
-  background: rgba(255,255,255,0.25);
+  background: radial-gradient(
+    circle at center,
+    rgba(255,255,255,0.35) 0%,
+    rgba(255,255,255,0.25) 35%,
+    rgba(255,255,255,0.12) 60%,
+    rgba(255,255,255,0.0) 75%
+  );
   border: none;
-  border-radius: 28px;
-  padding: 32px;
-  box-shadow: 0 30px 60px rgba(0,0,0,.12);
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
 }
 .cat-wrap img{
   width:115%;
@@ -344,6 +350,7 @@ details p{
   .hero{ padding:46px 16px 34px; }
   .main{ padding:28px 16px 60px; }
 }
+
 
 
 
