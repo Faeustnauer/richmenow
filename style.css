@@ -55,7 +55,7 @@ body{
 /* HERO */
 .hero{
   background:var(--yellow);
-  padding:56px 28px 44px;
+  padding:40px 28px 40px;   /* vorher 56px oben */
 }
 
 .hero-inner{
@@ -73,5 +73,10 @@ body{
   line-height:1.07;
   letter-spacing:-0.6px;
 }
+hero-copy{
+  position:relative;
+  top:-14px;
+}
 
 .l
+
