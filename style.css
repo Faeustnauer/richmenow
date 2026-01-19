@@ -130,7 +130,7 @@ body{
 /* CAT AREA */
 .hero-art{
   position:relative;
-  top:12px;
+  top:-26px;         /* war 12px -> jetzt hoch */
   text-align:center;
 }
 
@@ -156,6 +156,7 @@ body{
   margin:0 auto;
   transform: translateX(-12%);
   object-fit:contain;
+  margin-top:-10px;
 }
 
 .cat-caption{
@@ -234,4 +235,5 @@ body{
   .hero{ padding:56px 16px 48px; }
   .main{ padding:36px 16px 60px; }
 }
+
 
