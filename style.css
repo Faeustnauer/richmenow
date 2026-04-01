@@ -1,284 +1,269 @@
-:root{
-  --yellow:#f3cd54;
-  --text:#111111;
-  --muted:rgba(0,0,0,.65);
-  --line:rgba(0,0,0,.10);
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RICH ME̶N̶OW</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-/* Reset */
-*{ box-sizing:border-box; }
-html,body{ margin:0; padding:0; }
-body{
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  color:var(--text);
-  background:#fff;
-}
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">RICH ME<span class="strike">N</span>OW</div>
+      <div class="tagline">The Antisocial Catperiment</div>
+    </div>
 
-/* Topbar */
-.topbar{
-  position:sticky;
-  top:0;
-  z-index:10;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 28px;
-  background:rgba(243,205,84,.95);
-  backdrop-filter: blur(6px);
-  border-bottom:1px solid rgba(0,0,0,.08);
-}
+    <nav class="nav">
+      <a href="#levels">Wealth Levels</a>
+      <a href="#donate">Donate</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
 
-.logo{
-  font-weight:800;
-  letter-spacing:1px;
-  font-size:20px;
-}
-.strike{ text-decoration: line-through; }
-.tagline{
-  font-size:12px;
-  opacity:.75;
-  margin-top:4px;
-}
-.brand{ display:flex; flex-direction:column; }
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <h1>Help Meow become<br />the world’s richest cat.</h1>
 
-.nav a{
-  color:var(--text);
-  text-decoration:none;
-  font-size:14px;
-  margin-left:18px;
-  opacity:.8;
-}
-.nav a:hover{ opacity:1; }
+        <p class="lead">
+          I don’t catch mice. I catch <strong>money</strong>.<br />
+          <span class="muted">Or are you secretly just a poor dog?</span>
+        </p>
 
-/* HERO */
-.hero{
-  background:var(--yellow);
-  padding:10px 28px 28px;
-}
+        <div class="cta-row">
+          <button class="cta" disabled aria-disabled="true">Feed Meow with Money</button>
+          <div class="cta-note">Donations are closed. Reveal in <strong>1 year</strong>.</div>
+        </div>
 
-.hero-inner{
-  max-width:1100px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns: 1.05fr .95fr;
-  gap:28px;
-  align-items:stretch;
-}
+        <div class="micro">
+          This is an internet experiment: you won’t see totals until the reveal.
+        </div>
 
-.hero h1{
-  margin:0 0 16px;
-  font-size:clamp(42px,6vw,64px);
-  line-height:.95;
-  letter-spacing:-1px;
-}
+        <div class="chips">
+          <span class="chip">No account</span>
+          <span class="chip">No login</span>
+          <span class="chip">No reason</span>
+        </div>
+      </div>
 
-.lead{
-  margin:0 0 26px;
-  font-size:17px;
-  line-height:1.55;
-  max-width:520px;
-}
+      <div class="hero-art">
+        <div class="drop-zone" id="dropZone"></div>
 
-.muted{ color:var(--muted); }
+        <div class="cat-wrap">
+          <img src="cat.png" alt="Rich Meow (Maine Coon)" />
+        </div>
 
-/* CTA */
-.cta-row{
-  display:flex;
-  align-items:center;
-  gap:16px;
-  flex-wrap:wrap;
-  margin-bottom:16px;
-}
+        <div class="cat-caption">Rich Meow • Maine Coon • unapologetically ambitious</div>
+      </div>
+    </div>
+  </section>
 
-.cta{
-  background:#111;
-  color:#fff;
-  border:0;
-  border-radius:999px;
-  padding:14px 24px;
-  font-size:16px;
-  font-weight:700;
-  cursor:not-allowed;
-  opacity:.92;
-}
+  <main class="main">
+    <section class="grid">
+      <article class="card">
+        <div class="card-head">
+          <h2>Top Donating Countries</h2>
+          <span class="pill">teaser</span>
+        </div>
 
-.cta-note{
-  font-size:13px;
-  color:rgba(0,0,0,.7);
-}
+        <p class="small">
+          Rankings rotate. Totals stay hidden until the reveal.
+        </p>
 
-.micro{
-  font-size:12px;
-  color:rgba(0,0,0,.65);
-  margin-bottom:16px;
-}
+        <ul class="ranking" id="rankingList"></ul>
 
-.chips{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-}
+        <a class="link" href="#faq">How does this work?</a>
+      </article>
 
-.chip{
-  font-size:12px;
-  padding:8px 14px;
-  border-radius:999px;
-  background:rgba(255,255,255,.45);
-  border:1px solid rgba(0,0,0,.08);
-}
+      <article class="card">
+        <div class="card-head">
+          <h2>The Twist</h2>
+          <span class="pill">1-year reveal</span>
+        </div>
 
-/* CAT AREA */
-.hero-art{
-  position:relative;
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  min-height:520px;
-}
+        <p>
+          The world won’t see how much was given. Not now.
+          <strong>One year later</strong>, Rich Meow shows the number.
+        </p>
 
-/* Light halo instead of card */
-.cat-wrap{
-  position:absolute;
-  bottom:0;
-  width:100%;
-  height:88%;
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
+        <p class="small">
+          Until then: pure faith, pure chaos, pure curiosity.
+        </p>
 
-  background: radial-gradient(
-    circle at center,
-    rgba(255,255,255,0.35) 0%,
-    rgba(255,255,255,0.2) 40%,
-    rgba(255,255,255,0.08) 65%,
-    transparent 80%
-  );
-}
-.cat-wrap img{
-  max-height:100%;
-  width:auto;
-  object-fit:contain;
-  object-position:bottom center;
+        <div class="quote">
+          “If you need the total upfront… you might be a poor dog.”
+        </div>
+      </article>
+    </section>
 
-  filter:drop-shadow(0 30px 50px rgba(0,0,0,.28));
-}
+    <section class="section" id="levels">
+      <div class="section-head">
+        <h2>Wealth Levels</h2>
+        <p class="small">When the experiment is live, Meow evolves. Not yet.</p>
+      </div>
 
-.cat-caption{
-  margin-top:10px;
-  font-size:12px;
-  opacity:.7;
-}
+      <div class="levels">
+        <div class="level">
+          <div class="level-title">Level 1</div>
+          <div class="level-name">Cardboard Era</div>
+        </div>
+        <div class="level">
+          <div class="level-title">Level 2</div>
+          <div class="level-name">Cushion Money</div>
+        </div>
+        <div class="level">
+          <div class="level-title">Level 3</div>
+          <div class="level-name">Gold Collar</div>
+        </div>
+        <div class="level">
+          <div class="level-title">Level 4</div>
+          <div class="level-name">Luxury Tree</div>
+        </div>
+        <div class="level">
+          <div class="level-title">Level 5</div>
+          <div class="level-name">Jet Meow</div>
+        </div>
+        <div class="level">
+          <div class="level-title">Level 6</div>
+          <div class="level-name">World Domination</div>
+        </div>
+      </div>
+    </section>
 
-/* MAIN */
-.main{
-  max-width:1100px;
-  margin:0 auto;
-  padding:52px 28px 80px;
-  background:#fff;
-}
+    <section class="section" id="donate">
+      <div class="section-head">
+        <h2>Donate</h2>
+        <p class="small">Not active yet. The button stays locked on purpose.</p>
+      </div>
 
-/* Sections */
-.section{
-  margin-top:52px;
-}
+      <div class="donate-row">
+        <button class="ghost" disabled aria-disabled="true">$5 Sardine Snack</button>
+        <button class="ghost" disabled aria-disabled="true">$25 Fancy Feast</button>
+        <button class="ghost" disabled aria-disabled="true">$50 Golden Fish</button>
+        <button class="ghost" disabled aria-disabled="true">Custom</button>
+      </div>
 
-.section-head{
-  display:flex;
-  align-items:flex-end;
-  justify-content:space-between;
-  gap:16px;
-  border-top:1px solid var(--line);
-  padding-top:22px;
-}
+      <p class="small dim">
+        When activated later, payments will be handled by a trusted provider. No totals shown until the reveal.
+      </p>
+    </section>
 
-.section-head h2{
-  margin:0;
-  font-size:18px;
-}
+    <section class="section" id="faq">
+      <div class="section-head">
+        <h2>FAQ</h2>
+        <p class="small">Minimal answers. Maximum ego.</p>
+      </div>
 
-/* Footer */
-.footer{
-  border-top:1px solid var(--line);
-  padding:22px 28px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:12px;
-  font-size:12px;
-  color:rgba(0,0,0,.6);
-  background:#fff;
-}
+      <div class="faq">
+        <details>
+          <summary>Is this real?</summary>
+          <p>Yes. It’s an experiment about generosity and impulse. No charity framing. Just Meow.</p>
+        </details>
 
-.footer-links a{
-  color:rgba(0,0,0,.6);
-  text-decoration:none;
-  margin-left:14px;
-}
-.footer-links a:hover{ color:#000; }
+        <details>
+          <summary>Why can’t I see the total?</summary>
+          <p>Because the total changes behaviour. The reveal is the point.</p>
+        </details>
 
-/* Responsive */
-@media (max-width: 900px){
-  .hero-inner{
-    grid-template-columns:1fr;
-    gap:16px;
-  }
+        <details>
+          <summary>Where does the money go?</summary>
+          <p>Not active yet. When it’s live, you’ll see a simple statement about it on this page.</p>
+        </details>
 
-  .hero h1{
-    font-size:40px;
-  }
+        <details>
+          <summary>Is this a donation in the “charity” sense?</summary>
+          <p>No. It’s a voluntary gift. No receipts. No promises.</p>
+        </details>
+      </div>
+    </section>
+  </main>
 
-  .cat-wrap img{
-    width:115%;
-    transform: translateX(0);
-  }
-}
+  <footer class="footer">
+    <div>© Rich Meow Project • Internet experiment</div>
+    <div class="footer-links">
+      <a href="#" aria-disabled="true">Imprint</a>
+      <a href="#" aria-disabled="true">Privacy</a>
+    </div>
+  </footer>
 
-@media (max-width: 520px){
-  .topbar{ padding:14px 16px; }
-  .nav a{ margin-left:12px; }
-  .hero{ padding:56px 16px 48px; }
-  .main{ padding:36px 16px 60px; }
-}
+  <script>
+    const rotations = [
+      [
+        { flag: "🇺🇸", name: "United States" },
+        { flag: "🇦🇪", name: "United Arab Emirates" },
+        { flag: "🇸🇬", name: "Singapore" }
+      ],
+      [
+        { flag: "🇦🇪", name: "United Arab Emirates" },
+        { flag: "🇺🇸", name: "United States" },
+        { flag: "🇨🇭", name: "Switzerland" }
+      ],
+      [
+        { flag: "🇺🇸", name: "United States" },
+        { flag: "🇨🇭", name: "Switzerland" },
+        { flag: "🇦🇪", name: "United Arab Emirates" }
+      ]
+    ];
 
+    const list = document.getElementById("rankingList");
+    let i = 0;
 
+    function render() {
+      const items = rotations[i % rotations.length];
+      list.innerHTML = items.map((x, idx) => `
+        <li class="rank-item">
+          <span class="rank-left">
+            <span class="rank-num">${idx + 1}</span>
+            <span class="flag">${x.flag}</span>
+            <span class="country">${x.name}</span>
+          </span>
+          <span class="rank-right">hidden</span>
+        </li>
+      `).join("");
+      i++;
+    }
 
-.drop-zone{
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-  overflow:hidden;
-}
+    render();
+    setInterval(render, 3500);
 
-.drop{
-  position:absolute;
-  top:-10%;
-  animation:fall var(--dur) linear forwards;
-}
+    const zone = document.getElementById("dropZone");
+    const MAX_DROPS = 16;
+    let activeDrops = 0;
 
-.coin{
-  width:14px;
-  height:14px;
-  border-radius:50%;
-  background:radial-gradient(circle,#fff2a8,#d29d00);
-}
+    function spawnDrops() {
+      if (document.hidden || activeDrops >= MAX_DROPS) return;
 
-.goldbar{
-  width:40px;
-  height:18px;
-  border-radius:6px;
-  background:linear-gradient(135deg,#fff4b5,#cfa200);
-  box-shadow:0 6px 14px rgba(0,0,0,.25);
-}
+      const burst = Math.random() < 0.3;
+      const count = burst ? 2 + Math.floor(Math.random() * 3) : 1;
 
-@keyframes fall{
-  0%{transform:translateY(0);opacity:0}
-  10%{opacity:1}
-  75%{transform:translateY(70vh);opacity:1}
-  100%{transform:translateY(74vh);opacity:0}
-}
+      for (let j = 0; j < count && activeDrops < MAX_DROPS; j++) {
+        const el = document.createElement("div");
+        const gold = Math.random() < 0.02;
 
+        el.className = "drop " + (gold ? "goldbar" : "coin");
+        el.style.left = (30 + Math.random() * 40) + "%";
+        el.style.setProperty("--dur", (1.6 + Math.random() * 1.2) + "s");
 
+        zone.appendChild(el);
+        activeDrops++;
 
+        setTimeout(() => {
+          el.remove();
+          activeDrops--;
+        }, 2800);
+      }
+    }
+
+    function loopDrops() {
+      spawnDrops();
+      setTimeout(loopDrops, 400 + Math.random() * 1500);
+    }
+
+    loopDrops();
+  </script>
+</body>
+</html>
 
 
 
