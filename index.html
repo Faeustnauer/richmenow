@@ -1,9 +1,11 @@
-<!DOCTYPE html>
+
+   
+        <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RICH ME<N>OW</title>
+  <title>RICH ME̶N̶OW</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -21,14 +23,13 @@
     </nav>
   </header>
 
-  <!-- HERO (yellow) -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-copy">
-        <h1>Help Meow become<br/>the world’s richest cat.</h1>
+        <h1>Help Meow become<br />the world’s richest cat.</h1>
 
         <p class="lead">
-          I don’t catch mice. I catch <strong>money</strong>.<br/>
+          I don’t catch mice. I catch <strong>money</strong>.<br />
           <span class="muted">Or are you secretly just a poor dog?</span>
         </p>
 
@@ -49,18 +50,19 @@
       </div>
 
       <div class="hero-art">
+        <div class="drop-zone" id="dropZone"></div>
+
         <div class="cat-wrap">
           <img src="cat.png" alt="Rich Meow (Maine Coon)" />
         </div>
+
         <div class="cat-caption">Rich Meow • Maine Coon • unapologetically ambitious</div>
       </div>
     </div>
   </section>
 
-  <!-- MAIN (white) -->
   <main class="main">
     <section class="grid">
-      <!-- Countries teaser -->
       <article class="card">
         <div class="card-head">
           <h2>Top Donating Countries</h2>
@@ -71,14 +73,11 @@
           Rankings rotate. Totals stay hidden until the reveal.
         </p>
 
-        <ul class="ranking" id="rankingList">
-          <!-- Filled by JS -->
-        </ul>
+        <ul class="ranking" id="rankingList"></ul>
 
         <a class="link" href="#faq">How does this work?</a>
       </article>
 
-      <!-- The 1-year twist -->
       <article class="card">
         <div class="card-head">
           <h2>The Twist</h2>
@@ -100,7 +99,6 @@
       </article>
     </section>
 
-    <!-- Levels -->
     <section class="section" id="levels">
       <div class="section-head">
         <h2>Wealth Levels</h2>
@@ -135,7 +133,6 @@
       </div>
     </section>
 
-    <!-- Donate (disabled) -->
     <section class="section" id="donate">
       <div class="section-head">
         <h2>Donate</h2>
@@ -154,7 +151,6 @@
       </p>
     </section>
 
-    <!-- FAQ -->
     <section class="section" id="faq">
       <div class="section-head">
         <h2>FAQ</h2>
@@ -194,7 +190,6 @@
   </footer>
 
   <script>
-    // Rotating "Top Donating Countries" teaser (NO totals, no real data)
     const rotations = [
       [
         { flag: "🇺🇸", name: "United States" },
@@ -233,8 +228,41 @@
 
     render();
     setInterval(render, 3500);
+
+    const zone = document.getElementById("dropZone");
+    const MAX_DROPS = 16;
+    let activeDrops = 0;
+
+    function spawnDrops() {
+      if (document.hidden || activeDrops >= MAX_DROPS) return;
+
+      const burst = Math.random() < 0.3;
+      const count = burst ? 2 + Math.floor(Math.random() * 3) : 1;
+
+      for (let j = 0; j < count && activeDrops < MAX_DROPS; j++) {
+        const el = document.createElement("div");
+        const gold = Math.random() < 0.02;
+
+        el.className = "drop " + (gold ? "goldbar" : "coin");
+        el.style.left = (30 + Math.random() * 40) + "%";
+        el.style.setProperty("--dur", (1.6 + Math.random() * 1.2) + "s");
+
+        zone.appendChild(el);
+        activeDrops++;
+
+        setTimeout(() => {
+          el.remove();
+          activeDrops--;
+        }, 2800);
+      }
+    }
+
+    function loopDrops() {
+      spawnDrops();
+      setTimeout(loopDrops, 400 + Math.random() * 1500);
+    }
+
+    loopDrops();
   </script>
 </body>
 </html>
-
-
