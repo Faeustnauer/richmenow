@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>RICH ME̶N̶OW</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -230,7 +230,7 @@
     setInterval(render, 3500);
 
     const zone = document.getElementById("dropZone");
-    const MAX_DROPS = 16;
+    const MAX_DROPS = window.innerWidth < 520 ? 8 : 16;
     let activeDrops = 0;
 
     function spawnDrops() {
