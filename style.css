@@ -71,22 +71,27 @@ button{font:inherit}
   margin:0 auto;
   display:grid;
   grid-template-columns:1.05fr .95fr;
-  gap:20px;
-  align-items:stretch;
+  grid-template-rows:auto 1fr;
+  grid-template-areas:
+    "title art"
+    "copy  art";
+  column-gap:20px;
 }
 
-.hero-copy{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  max-width:520px;
-}
-
-.hero h1{
+.hero-title{
+  grid-area:title;
   margin:0 0 16px;
   font-size:clamp(42px,6vw,64px);
   line-height:.95;
   letter-spacing:-1px;
+  align-self:end;
+}
+
+.hero-copy{
+  grid-area:copy;
+  display:flex;
+  flex-direction:column;
+  max-width:520px;
 }
 
 .lead{
@@ -146,6 +151,7 @@ button{font:inherit}
 
 /* CAT AREA */
 .hero-art{
+  grid-area:art;
   position:relative;
   display:flex;
   align-items:flex-end;
@@ -420,14 +426,21 @@ button{font:inherit}
 /* ─── Responsive ───────────────────────────── */
 
 @media (max-width: 900px){
-  .hero-inner,
+  .hero-inner{
+    grid-template-columns:1fr;
+    grid-template-rows:auto;
+    grid-template-areas:
+      "title"
+      "art"
+      "copy";
+  }
   .grid{
     grid-template-columns:1fr;
   }
   .hero-art{
-    min-height:380px;
+    min-height:340px;
   }
-  .hero h1{
+  .hero-title{
     font-size:40px;
   }
   .levels{
@@ -460,11 +473,11 @@ button{font:inherit}
   .hero{
     padding:12px 16px 20px;
   }
-  .hero h1{
+  .hero-title{
     font-size:clamp(28px,8vw,36px);
     line-height:1;
     letter-spacing:-.5px;
-    margin-bottom:12px;
+    margin-bottom:8px;
   }
   .lead{
     font-size:15px;
@@ -486,10 +499,11 @@ button{font:inherit}
     text-align:center;
   }
   .hero-art{
-    min-height:240px;
+    min-height:200px;
+    margin-bottom:4px;
   }
   .cat-wrap{
-    width:min(300px,80vw);
+    width:min(260px,70vw);
   }
 
   /* Main */
