@@ -499,11 +499,27 @@ button{font:inherit}
     text-align:center;
   }
   .hero-art{
-    min-height:200px;
-    margin-bottom:4px;
+    min-height:auto;
+    overflow:visible;
+    padding-bottom:8px;
+  }
+  .drop-zone{
+    display:none;
   }
   .cat-wrap{
-    width:min(260px,70vw);
+    position:relative;
+    left:auto;
+    transform:none;
+    bottom:auto;
+    width:min(240px,65vw);
+    margin:0 auto;
+  }
+  .cat-caption{
+    position:relative;
+    bottom:auto;
+    left:auto;
+    text-align:center;
+    margin-top:4px;
   }
 
   /* Main */
