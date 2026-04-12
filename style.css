@@ -499,10 +499,10 @@ button{font:inherit}
     text-align:center;
   }
   .hero-art{
+    display:block;
     min-height:auto;
     overflow:visible;
-    padding-bottom:8px;
-    align-items:center;
+    padding:8px 0;
     background:transparent;
   }
   .drop-zone{
@@ -513,13 +513,15 @@ button{font:inherit}
     left:auto;
     transform:none;
     bottom:auto;
-    width:min(300px,85vw);
+    width:min(400px,92vw);
     margin:0 auto;
+    display:block;
   }
   .cat-wrap img{
     mix-blend-mode:multiply;
     width:100%;
     height:auto;
+    display:block;
   }
   .cat-caption{
     position:relative;
