@@ -502,6 +502,8 @@ button{font:inherit}
     min-height:auto;
     overflow:visible;
     padding-bottom:8px;
+    align-items:center;
+    background:transparent;
   }
   .drop-zone{
     display:none;
@@ -511,8 +513,13 @@ button{font:inherit}
     left:auto;
     transform:none;
     bottom:auto;
-    width:min(240px,65vw);
+    width:min(300px,85vw);
     margin:0 auto;
+  }
+  .cat-wrap img{
+    mix-blend-mode:multiply;
+    width:100%;
+    height:auto;
   }
   .cat-caption{
     position:relative;
