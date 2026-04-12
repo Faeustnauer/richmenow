@@ -91,20 +91,20 @@ button{font:inherit}
   flex:1;
   display:flex;
   flex-direction:column;
-  padding:12px 28px 16px;
+  padding:8px 24px 14px;
   min-height:0;
   overflow:hidden;
 }
 
 .hero-title{
   flex-shrink:0;
-  margin:0 0 10px;
-  font-size:clamp(32px,5vw,60px);
+  margin:0 0 6px;
+  font-size:clamp(30px,5vw,58px);
   line-height:1;
   letter-spacing:-1px;
 }
 
-/* Cat section — fills remaining space */
+/* Cat section — fills remaining space, big and centered */
 .cat-section{
   flex:1;
   display:flex;
@@ -117,7 +117,7 @@ button{font:inherit}
 
 .cat-section img{
   max-height:100%;
-  max-width:min(380px,80vw);
+  max-width:min(460px,90vw);
   width:auto;
   height:auto;
   object-fit:contain;
@@ -126,33 +126,25 @@ button{font:inherit}
   -webkit-tap-highlight-color:transparent;
 }
 
-.cat-caption{
+/* CTA on page 1 */
+.page1-cta{
   flex-shrink:0;
-  font-size:11px;
-  opacity:.65;
-  margin-top:4px;
-  text-align:center;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:10px;
 }
 
 /* Lead line */
 .lead-line{
   flex-shrink:0;
-  margin:10px 0 0;
-  font-size:16px;
-  line-height:1.5;
+  margin:8px 0 0;
+  font-size:15px;
+  line-height:1.45;
 }
 
 .muted{color:var(--muted)}
-
-/* Scroll hint */
-.scroll-hint{
-  flex-shrink:0;
-  text-align:center;
-  font-size:12px;
-  opacity:.5;
-  margin-top:8px;
-  transition:opacity .4s;
-}
 
 /* ── PAGE 2 ── */
 .snap-page-2{
@@ -396,18 +388,33 @@ button{font:inherit}
     min-height:44px;
   }
 
-  /* Page 1 */
-  .page1-body{padding:8px 16px 12px}
-  .hero-title{
-    font-size:clamp(24px,7.5vw,34px);
-    margin-bottom:6px;
-  }
-  .lead-line{font-size:15px;margin-top:8px}
-  .scroll-hint{margin-top:6px}
-
-  /* Cat — a bit smaller on small phones */
+  /* Cat — large on mobile too */
   .cat-section img{
-    max-width:min(280px,72vw);
+    max-width:min(360px,88vw);
+  }
+
+  /* Page 1 body tighter on mobile */
+  .page1-body{padding:6px 16px 12px}
+  .hero-title{font-size:clamp(22px,7vw,32px);margin-bottom:4px}
+  .lead-line{font-size:14px;margin-top:6px}
+
+  /* CTA on page 1 */
+  .page1-cta{
+    flex-direction:column;
+    align-items:stretch;
+    gap:6px;
+    margin-top:8px;
+  }
+  .page1-cta .cta{
+    width:100%;
+    text-align:center;
+    padding:14px 20px;
+    font-size:15px;
+    min-height:48px;
+  }
+  .page1-cta .cta-note{
+    text-align:center;
+    font-size:12px;
   }
 
   /* Page 2 */

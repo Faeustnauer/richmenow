@@ -29,15 +29,17 @@
 
         <div class="cat-section">
           <img src="cat.png" alt="Rich Meow (Maine Coon)" id="catImg" />
-          <div class="cat-caption">Rich Meow • Maine Coon • unapologetically ambitious</div>
+        </div>
+
+        <div class="page1-cta">
+          <button class="cta" disabled aria-disabled="true">Feed Meow with Money</button>
+          <div class="cta-note">Donations are closed. Reveal in <strong>1 year</strong>.</div>
         </div>
 
         <p class="lead-line">
           I don't catch mice. I catch <strong>money</strong>.<br />
           <span class="muted">Or are you secretly just a poor dog?</span>
         </p>
-
-        <div class="scroll-hint" id="scrollHint">↓ scroll</div>
       </div>
     </div>
 
@@ -208,15 +210,6 @@
     }
 
     document.getElementById("catImg").addEventListener("click", scrollToPage2);
-
-    /* Hide scroll hint once user scrolled */
-    const hint = document.getElementById("scrollHint");
-    wrapper.addEventListener("scroll", function onScroll() {
-      if (wrapper.scrollTop > 40) {
-        hint.style.opacity = "0";
-        wrapper.removeEventListener("scroll", onScroll);
-      }
-    }, { passive: true });
   </script>
 </body>
 </html>
